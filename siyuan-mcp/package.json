@@ -16,7 +16,7 @@
     "start": "node dist/index.js",
     "dev": "tsx src/index.ts",
     "typecheck": "tsc --noEmit",
-    "prepare": "npm run build"
+    "inspect": "npx --yes @modelcontextprotocol/inspector node --env-file=.env.local dist/index.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.0",
