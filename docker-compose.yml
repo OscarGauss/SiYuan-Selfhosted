@@ -1,8 +1,9 @@
 services:
   siyuan:
-    image: b3log/siyuan:latest
+    image: b3log/siyuan:v3.7.0
     container_name: siyuan
     command:
+      - "serve"
       - "--workspace=/siyuan/workspace/"
       - "--accessAuthCode=${SIYUAN_AUTH_CODE}"
     environment:
@@ -11,8 +12,10 @@ services:
       - TZ=UTC
     volumes:
       - siyuan_data:/siyuan/workspace
-    ports:
-      - "6806:6806"
+    # ports:
+    # - "6806:6806"
+    expose:
+      - "6806"
     restart: unless-stopped
 
 volumes:
